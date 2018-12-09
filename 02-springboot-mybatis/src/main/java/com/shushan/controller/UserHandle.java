@@ -23,7 +23,7 @@ public class UserHandle {
      */
     @RequestMapping("/findUserListByCode/{code}")
     public List<Student> findUserListByCode(@PathVariable("code") String code){
-        return userHandleService.findUserListByCode(code);
+         return userHandleService.findUserListByCode(code);
     }
 
 
