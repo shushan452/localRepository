@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shushan.dao.UserHandleDao">
+    <resultMap id="BaseResultMap" type="com.shushan.entity.Student">
+        <constructor>
+            <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+            <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="phone" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="address" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <arg column="birthDay" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+        </constructor>
+    </resultMap>
+
+    <select id="findUserListByCode" resultType="com.shushan.entity.Student" parameterType="String">
+        select id, code, name, phone, address, birthday from student where code = #{code}
+
+    </select>
+
+</mapper>
